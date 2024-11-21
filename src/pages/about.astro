@@ -1,13 +1,44 @@
+---
+const name = "sarvaiya jayesh";
+const things = {
+  name: "Sarvaiya Jayesh",
+  age: 25,
+  country: "India",
+  hobbies: ["reading", "cooking", "travelling"],
+};
+const skills = ["JavaScript", "React", "Svelte", "Vue", "SvelteKit", "Vite"];
+---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
+  <style>
+    .skills {
+      list-style-type: none;
+      color: orangered;
+    }
+  </style>
   <body>
-    <a href="/">home</a>
-    <h1>we are in about page</h1>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+    <h1>{name}</h1>
+    <h2>... and my new Astro site!</h2>
+
+    <p>
+      I am a {things.name} who loves to {things.hobbies.join(", ")}. I also like
+      to {skills.join(", ")}.
+    </p>
+
+    <p>
+      I am {things.age} years old and I live in {things.country}.
+    </p>
+
+    <ul>
+      {skills.map((skill) => <li class="skills">{skill}</li>)}
+    </ul>
   </body>
 </html>
